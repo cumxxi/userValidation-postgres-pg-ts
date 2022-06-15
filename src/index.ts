@@ -2,7 +2,7 @@ import "reflect-metadata";
 import { ApolloServer } from "apollo-server-express";
 import Express from "express";
 import { buildSchema } from "type-graphql";
-import { RegisterResolver } from "./module/user/register";
+import { RegisterResolver } from "./module/user/Register";
 import { createConnection } from "typeorm";
 
 const main = async () => {
@@ -13,7 +13,9 @@ const main = async () => {
   });
 
   const app = Express();
-  const apolloServer = new ApolloServer({ schema });
+  const apolloServer = new ApolloServer({
+    schema,
+  });
   await apolloServer.applyMiddleware({ app });
 
   app.listen(4000, () => {
