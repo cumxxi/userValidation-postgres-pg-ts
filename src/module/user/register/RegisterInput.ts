@@ -14,7 +14,7 @@ lastName:string
 
 @Field()
 @IsEmail()
-@IsUserAlreadyExist()
+@IsUserAlreadyExist({message:"Bu mail adresi kullanımdadır"})
 email:string
 
 @Field()
